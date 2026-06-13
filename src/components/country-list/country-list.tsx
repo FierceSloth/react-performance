@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import type { Country } from '../../types';
 import { createYearDataMap, getPopulationForYear } from '../../utils/data-transformers';
 import { CountryCard } from '../country-card/country-card';
@@ -16,7 +16,7 @@ type CountryListProps = {
   onYearChange: (year: number) => void;
 };
 
-export const CountryList = ({
+export const CountryList = memo(({
   countries,
   searchQuery,
   selectedColumns,
@@ -57,4 +57,4 @@ export const CountryList = ({
       ))}
     </div>
   );
-};
+});
