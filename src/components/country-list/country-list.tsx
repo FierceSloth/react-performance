@@ -11,7 +11,6 @@ type CountryListProps = {
   countries: Country[];
   searchQuery: string;
   selectedColumns: string[];
-  selectedRegion: string;
   selectedYear: number;
   sortField: 'name' | 'population';
   sortOrder: 'asc' | 'desc';
@@ -53,7 +52,6 @@ export const CountryList = memo(
     countries,
     searchQuery,
     selectedColumns,
-    selectedRegion,
     selectedYear,
     sortField,
     sortOrder,
@@ -61,10 +59,9 @@ export const CountryList = memo(
     const filteredCountries = useMemo(() => {
       return countries.filter((c) => {
         const matchesSearch = c.id.toLowerCase().includes(searchQuery.toLowerCase());
-        const matchesRegion = !selectedRegion || c.data.some((d) => d.region === selectedRegion);
-        return matchesSearch && matchesRegion;
+        return matchesSearch;
       });
-    }, [countries, searchQuery, selectedRegion]);
+    }, [countries, searchQuery]);
 
     const sortedCountries = useMemo(() => {
       return [...filteredCountries].sort((a, b) => {

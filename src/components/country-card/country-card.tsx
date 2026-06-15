@@ -22,12 +22,10 @@ export const CountryCard = memo(({ country, selectedYear, selectedColumns }: Cou
   }, [country.data]);
 
   const population = useMemo(() => {
-    return getPopulationForYear(yearDataMap, selectedYear)
+    return getPopulationForYear(yearDataMap, selectedYear);
   }, [selectedYear, yearDataMap]);
 
-  const co2 = useMemo(() => {
-    return getCo2ForYear(yearDataMap, selectedYear)
-  }, [selectedYear, yearDataMap]);
+  const co2 = getCo2ForYear(yearDataMap, selectedYear);
 
   return (
     <div className={styles.card}>
