@@ -27,3 +27,39 @@
 - **Commit duration**: N/A
 - **Render duration**: 581.7 ms
 - **Screenshot**: ![screenshot](./screenshots/baseline/column.png)
+
+## Optimized Measurements
+
+### Interaction A: Sort countries
+
+- **Commit duration**: N/A
+- **Render duration**: 75.4 ms
+- **Screenshot**: ![screenshot](./screenshots/optimized/sort.png)
+
+### Interaction B: Search countries
+
+- **Commit duration**: N/A
+- **Render duration**: 31.3 ms
+- **Screenshot**: ![screenshot](./screenshots/optimized/search.png)
+
+### Interaction C: Change year
+
+- **Commit duration**: N/A
+- **Render duration**: 88.8 ms
+- **Screenshot**: ![screenshot](./screenshots/optimized/year.png)
+
+### Interaction D: Toggle column
+
+- **Commit duration**: N/A
+- **Render duration**: 19.5 ms
+- **Screenshot**: ![screenshot](./screenshots/optimized/column.png)
+
+## Summary of Improvements
+
+| Interaction      | Baseline (ms) | Optimized (ms) | Improvement |
+| ---------------- | ------------- | -------------- | ----------- |
+| Sort countries   | 500.8         | 75.4           | 84.9%       |
+| Search countries | 189.8         | 31.3           | 83.5%       |
+| Change year      | 498.4         | 88.8           | 82.2%       |
+| Toggle column    | 581.7         | 19.5           | 96.6%       |
+| **Average**      | **442.7**     | **53.8**       | **87.9%**   |
